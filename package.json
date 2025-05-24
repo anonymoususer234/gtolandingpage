@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run prepare-extension && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare-extension": "xcopy \"..\\pokernow-copilot\" \"public\\pokernow-copilot\" /E /I /Y && powershell Compress-Archive -Path \"public\\pokernow-copilot\\*\" -DestinationPath \"public\\pokernow-copilot.zip\" -Force"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
